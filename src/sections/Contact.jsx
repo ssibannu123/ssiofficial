@@ -58,7 +58,7 @@ const Contact = () => {
   return (
     <div
       id='contact'
-      className="py-12 pt-20 px-4 sm:px-8 lg:px-16 mt-20">
+      className="py-12 pt-20 px-4 sm:px-8 lg:px-16 mt-10 bg-zinc-50 hover:border-2 hover:border-gray-200 mb-20 rounded-lg mx-2 shadow-md shadow-zinc-200">
       
       
       

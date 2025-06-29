@@ -12,7 +12,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='w-[98.6vw] m-auto overflow-x-hidden scroll-smooth '>
+    <div className='w-[98.6vw] m-auto overflow-x-hidden scroll-smooth  '>
 
       <GsapContextProvider>
 
@@ -51,7 +51,6 @@ const page = () => {
 
 
       </GsapContextProvider>
-
 
     </div>
   )

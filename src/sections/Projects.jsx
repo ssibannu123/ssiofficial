@@ -80,7 +80,7 @@ const Projects = () => {
     return (
         <div
             id='services'
-            className='mt-10 relative pt-20'>
+            className='mt-10 relative py-10 pb-20 hover:border-2 hover:border-zinc-200 mx-2 bg-zinc-50 rounded-lg shadow-md shadow-zinc-300 '>
 
             <div ref={servicesHeadingRef} className="h-max w-full  text-4xl font-bold px-10 text-center mb-0 md:mb-">
                 <span className='text-orange-600'>Our</span> Projects

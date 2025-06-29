@@ -3,6 +3,7 @@ import { GsapContext } from '@/context/GsapContext'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useContext } from 'react'
+import { heroSectionBgImg } from '../utilities/filesAndLink.js'
 
 const Hero = () => {
 
@@ -13,6 +14,15 @@ const Hero = () => {
   } = useContext(GsapContext)
 
 
+
+
+
+
+
+
+
+
+
   return (
     <div
       id='home'
@@ -20,10 +30,11 @@ const Hero = () => {
 
 
 
+
       {/* Background Image → lower z-index */}
       <div ref={bgHeroImgRef} className="h-full w-full absolute opacity-0 top-0 right-0 -z-10">
         <Image
-          src="https://media.istockphoto.com/id/1734420358/photo/two-designers-choosing-colour-looking-monitor-business-place-men-brainstorming.jpg?s=1024x1024&w=is&k=20&c=loCZnUzxt2_qS9FjJbrtRmMehm3lxTXhsFcnZ0o-JDs="
+          src={heroSectionBgImg}
           alt="bg hero section image"
           height={600}
           width={2000}
@@ -44,6 +55,7 @@ const Hero = () => {
           </Link>
         </div>
       </div>
+
 
 
 
