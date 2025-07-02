@@ -5,11 +5,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { MyContext } from '@/context/MyContext';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Page = () => {
 
 
   let router= useRouter()
+
+  let [loading, setLoading]=useState(false)
+
     let {
         currentClickedCourseDetails
     }= useContext(MyContext)
@@ -60,7 +64,7 @@ const Page = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData)
+    // console.log(formData)
     const { name, phoneNo, address, terms } = formData;
     if (!name || !phoneNo || !address) {
       alert('Please fill in all required fields: Name, Phone Number, and Address.');
@@ -71,6 +75,9 @@ const Page = () => {
       return;
     }
     try {
+          setLoading(true)
+
+
       const response = await axios.post('/api/courseApplyApi', formData);
       // console.log('Form submitted:', response.data);
       if(response?.data?.success==true){
@@ -78,7 +85,13 @@ const Page = () => {
       }else{
         alert(response?.data?.reason)
       }
+
+
+            setLoading(false)
+
+
     } catch (error) {
+      setLoading(false)
       console.error('Submission error:', error);
     }
   };
@@ -205,7 +218,7 @@ const Page = () => {
               className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
             />
             <label htmlFor="terms" className="ml-3 text-gray-700 text-sm">
-              I agree with <a href="/terms" className="text-blue-600 hover:underline">terms and conditions</a>
+              I agree with <Link href="termsCondition" className="text-blue-600 hover:underline">terms and conditions</Link>
             </label>
           </div>
 
@@ -214,7 +227,7 @@ const Page = () => {
               type="submit"
               className="mt-6 px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              Submit
+              {loading?"Loading...":"Submit"}
             </button>
           </div>
         </form>
