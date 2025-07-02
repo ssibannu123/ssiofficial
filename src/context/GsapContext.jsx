@@ -7,7 +7,7 @@ gsap.registerPlugin(scrollTrigger)
 
 const GsapContextProvider = ({ children }) => {
 
-    let durationVariable = 0.7;
+    let durationVariable = 0.4;
 
 
 
@@ -195,7 +195,7 @@ const GsapContextProvider = ({ children }) => {
             {
                 opacity: 1,
                 y: -50,
-                duration: durationVariable,
+                duration: durationVariable-0.4,
                 stagger: 0.2,
                 ease: "power2.out"
             }

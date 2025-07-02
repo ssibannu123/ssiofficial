@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 
 
 // let mongodbUri = "mongodb://127.0.0.1:27017/ssi";
-let mongodbUri= process.env.mongodbURI
-if(!mongodbUri){
+let mongodbUri = process.env.MONGODB_URI;
+if (!mongodbUri) {
     throw new Error("Mongodb uri is not present")
 }
 

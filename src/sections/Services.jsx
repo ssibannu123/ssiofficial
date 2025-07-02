@@ -116,7 +116,7 @@ const Services = () => {
                                             alt='Service Image'
                                             height={300}
                                             width={400}
-                                            className=' object-center hover:rotate-1 transition-all duration-500 hover:scale-105 h-full w-full '
+                                            className=' object-center hover:rotate-1 transition-all duration-500 hover:scale-110 h-full w-full '
                                         />
                                     </div>
                                     <div className='w-60 flex justify-center flex-col items-center'>

@@ -26,8 +26,9 @@ const whatAppNo="+923213268095"
 const phoneNo="+923213268095"
 
 
-const heroSectionBgImg= "https://media.istockphoto.com/id/1734420358/photo/two-designers-choosing-colour-looking-monitor-business-place-men-brainstorming.jpg?s=1024x1024&w=is&k=20&c=loCZnUzxt2_qS9FjJbrtRmMehm3lxTXhsFcnZ0o-JDs="
-
+// const heroSectionBgImg= "https://media.istockphoto.com/id/1734420358/photo/two-designers-choosing-colour-looking-monitor-business-place-men-brainstorming.jpg?s=1024x1024&w=is&k=20&c=loCZnUzxt2_qS9FjJbrtRmMehm3lxTXhsFcnZ0o-JDs="
+import heroSectionBgImg from '../../public/bgImg2.jpeg'
+import aboutSectionSideImg from '../../public/bgImg1.png'
 
 
 export {
@@ -43,6 +44,7 @@ export {
     whatAppNo,
     phoneNo,
     heroSectionBgImg,
+    aboutSectionSideImg,
     cpp,
     gameDev,
     graphicDesigning,
