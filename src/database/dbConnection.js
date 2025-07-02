@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 // let mongodbUri = "mongodb://127.0.0.1:27017/ssi";
 let mongodbUri = process.env.MONGODB_URI;
 if (!mongodbUri) {
-    throw new Error("Mongodb uri is not present")
+   console.log("Mongodb uri is not present and does not get from the env")
 }
 
 
