@@ -3,18 +3,30 @@ import { GsapContext } from '@/context/GsapContext';
 import Image from 'next/image'
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import 'remixicon/fonts/remixicon.css'
-// import project1 from '@/../public/project1.mp4'
-// import project2 from '@/../public/project2.mp4'
-// import project3 from '@/../public/project3.mp4'
+import { tumbnail1 } from '@/utilities/filesAndLink';
+import "./Project.css"
+import projectData from '@/utilities/projectsData';
+
+
+
+
+
+
+
 
 const Projects = () => {
 
     let scrollToContainer = useRef()
 
     let {
-        servicesHeadingRef,
-        servicesCardParentElementRef
+        projectsHeadingRef,
+        ProjectCardParentElementRef
     } = useContext(GsapContext)
+
+    let [tumbnailSectionView, setTumbnailSectionView] = useState(false)
+    let [uiUxSectionView, setUiUxSectionView] = useState(false)
+    let [webSectionView, setWebSectionView] = useState(false)
+    let [threeDSectionView, setThreeDSectionView] = useState(false)
 
 
 
@@ -28,14 +40,6 @@ const Projects = () => {
             type: "video",
             url: "https://res.cloudinary.com/dop329ono/video/upload/v1750147127/project1_yl6htk.mp4"
         },
-        // {
-        //     type:"video",
-        //     url:"/project3.mp4"
-        // },
-        // {
-        //     type:"image",
-        //     url:"/project4.jpg"
-        // }
     ]
 
 
@@ -75,16 +79,51 @@ const Projects = () => {
 
 
 
+    useEffect(() => {
+        console.log(tumbnailSectionView)
+    }, [tumbnailSectionView])
+
+
+
+
+
+
+
+    function handleSectionBoxClick(sectionName) {
+        if (sectionName == "tumbnail") {
+            setTumbnailSectionView(prev => !prev)
+        } else if (sectionName == "uiux") {
+            setUiUxSectionView(prev => !prev)
+        } else if (sectionName == "web") {
+            setWebSectionView(prev => !prev)
+        } else if (sectionName == "3d") {
+            setThreeDSectionView(prev => !prev)
+        }
+    }
+
+
+
+
+
+
 
 
     return (
         <div
-            id='services'
-            className='mt-10 relative py-10 pb-20 hover:border-2 hover:border-zinc-200 mx-2 bg-zinc-50 rounded-lg shadow-md shadow-zinc-300 '>
+            id='projects'
+            className='mt-20 md:mt-20 relative py-10 pb-20 hover:border-2 hover:border-zinc-200 mx-2 bg-zinc-50 rounded-lg shadow-md shadow-zinc-300 '>
 
-            <div ref={servicesHeadingRef} className="h-max w-full  text-4xl font-bold px-10 text-center mb-0 md:mb-">
-                <span className='text-orange-600'>Our</span> Projects
+
+
+
+
+            <div
+                ref={projectsHeadingRef}
+                className="h-max w-full text-3xl  md:text-4xl font-bold px-10 text-center mb-0 opacity-0 dark:text-zinc-950">
+                <span className='text-[#F28C28]'>Our</span> Achievements
             </div>
+
+
 
 
 
@@ -92,18 +131,91 @@ const Projects = () => {
 
             {/* upper container */}
             <div
-                ref={scrollToContainer}
-                id='projects'
-                className="h-max overflow-y-hidden w-full    overflow-x-auto lg:overflow-x-hidden  flex   px-5">
+                // ref={scrollToContainer}
+
+                className="h-max  w-fulloverflow-hidden  flex   px-5 mt-10">
 
 
 
+
+                {/* lower container */}
+                <div
+                    ref={ProjectCardParentElementRef}
+                    className="h-max w-full  flex flex-wrap gap-2 gap-y-4 mt-10 justify-center items-center">
+
+
+
+                    {/* loop on array */}
+                    {
+
+                        projectData.map((eachSection, index) => {
+
+                            let [focus, setFocus] = useState(false)
+
+
+                            return (
+
+
+                                <div
+                                    key={index}
+                                    onClick={() => { handleSectionBoxClick(eachSection.name); setFocus(prev => !prev) }}
+                                    className={`projectBox       h-max w-96 opacity-0    gap-x-2 gap-y-2 flex  justify-center items-center  p-2 transform origin-center transition-transform duration-1000 border-2 border-zinc-200 rounded-lg ${focus ? " animation     backdrop-blur-2xl backdrop-brightness-50 flex-col md:flex-row" : "flex-row "} `}>
+
+                                    
+
+                                    {/* map on child arrays inside parent array looping */}
+                                    {
+                                        eachSection.data.map((eachProject, indexChild) => {
+                                            return (
+                                                <div
+                                                    key={indexChild}
+                                                    className={`h-max   overflow-hidden mt-0 rounded-lg flex justify-center items-center ${focus ? " w-[80%] md:w-[47%]" : " w-[47%]"}`}>
+                                                    <Image
+                                                        src={eachProject}
+                                                        height={400}
+                                                        width={400}
+                                                        alt='tumnail img '
+                                                        className='object-cover rounded-lg border-2 border-zinc-300'
+                                                    />
+                                                </div>
+                                            )
+                                        })
+                                    }
+
+
+
+
+
+
+
+                                </div>
+
+
+                            )
+                        })
+
+                    }
+
+
+
+
+
+
+
+                </div>
 
                 {/* The container which hold the card */}
-                <div
+                {/* <div
                     ref={servicesCardParentElementRef}
                     className={`h-max  w-full    transition-all  duration-500 flex flex-row justify-start md:justify-center gap-1 items-center pr-10 `}>
-                    {
+                   
+                   
+
+                   
+                   
+                   
+                   
+                     {
                         projectArray.map((eachProject, index) => {
                             return (
                                 // card container
@@ -127,8 +239,8 @@ const Projects = () => {
                                 </div>
                             )
                         })
-                    }
-                </div>
+                    } 
+                </div> */}
             </div>
 
 

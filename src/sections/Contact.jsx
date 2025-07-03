@@ -58,20 +58,20 @@ const Contact = () => {
   return (
     <div
       id='contact'
-      className="py-12 pt-20 px-4 sm:px-8 lg:px-16 mt-10 bg-zinc-50 hover:border-2 hover:border-gray-200 mb-20 rounded-lg mx-2 shadow-md shadow-zinc-200">
+      className="py-12 pt-20 px-4 sm:px-8 lg:px-16 mt-10 bg-zinc-50 hover:border-2 hover:border-gray-200 mb-20 rounded-lg mx-2  shadow-md shadow-zinc-200">
       
       
       
       
-      <h2 ref={contactHeadingRef} className="opacity-0 text-4xl font-bold text-center mb-10 text-zinc-900 dark:text-zinc-200">
-        Connect with <span className='text-orange-500'>Us</span>
+      <h2 ref={contactHeadingRef} className="opacity-0 text-3xl  md:text-4xl font-bold text-center mb-10 text-zinc-900 dark:text-zinc-950">
+        Connect with <span className='text-[#F28C28]'>Us</span>
         </h2>
 
 
 
 
 
-      <div ref={contactCardParentElementRef} className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div ref={contactCardParentElementRef} className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 dark:text-zinc-950">
        
       
         {contacts.map((contact, index) => (
@@ -81,7 +81,7 @@ const Contact = () => {
           >
             <div className="flex items-center gap-3 mb-2">
               <i className={`${contact.icon} text-3xl ${contact.color} group-hover:scale-110 transition`} />
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-zinc-100 group-hover:text-blue-600">{contact.platform}</h3>
+              <h3 className="text-xl font-semibold text-gray-900  group-hover:text-blue-600">{contact.platform}</h3>
             </div>
 
             <div className="flex gap-3 mt-auto">

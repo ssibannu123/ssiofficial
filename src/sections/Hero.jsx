@@ -30,9 +30,10 @@ const Hero = () => {
 
 
 
+<div className="h-full w-full absolute top-0 right-0 backdrop-blur-[2px] backdrop-brightness-90"></div>
 
       {/* Background Image → lower z-index */}
-      <div ref={bgHeroImgRef} className="h-full w-full absolute opacity-0 top-0 right-0 -z-10">
+      <div ref={bgHeroImgRef} className="h-full w-full absolute opacity-0 top-0 right-0 -z-10 ">
         <Image
           src={heroSectionBgImg}
           alt="bg hero section image"
@@ -42,16 +43,17 @@ const Hero = () => {
         />
       </div>
 
+      {/* <div className=" absolute  top-0 right-0 z-10 backdrop-blur-2xl"></div> */}
 
 
       {/* Text content → higher z-index */}
       <div ref={HeroContentContainerRef} className="h-max w-[90%] md:w-[70%] opacity-0 px-5 rounded-2xl  border-2 border-zinc-200 text-zinc-100 z-10 mt-20 text-shadow-2xs backdrop-blur-xl py-10">
         <div ref={HeroContentRef} className="opacity-0">
-          <h1 className='text-2xl md:text-4xl font-bold'>Empowering Bannu’s Talent with Cutting‑Edge IT Skills Since Day One</h1>
+          <h1 className='text-2xl md:text-3xl lg:w-4xl font-bold'>Empowering Bannu’s Talent with Cutting‑Edge IT Skills Since Day One</h1>
           <p className='mt-5 text-sm'>Located in the heart of Bannu on Railway Road, Syed Software Institute delivers hands‑on, industry‑aligned training in full‑stack development, mobile & web applications, graphic design, animation and digital marketing. With modern computer labs, expert instructors and a vibrant community of over 1000+ learners, SSI ensures every student masters real‑world tools, best practices and certification‑ready projects that employers demand. Join us to transform your passion into professional skills—and lead Bannu’s tech revolution.</p>
           <Link href="#contact" scroll={true}>
             <button
-              className='mt-10 bg-zinc-900 hover:bg-zinc-950 hover:scale-105 transition-all duration-200 h-max w-max p-2 px-5 rounded-md'>Contact</button>
+              className='mt-10 bg-[#f28c28] px-7 hover:px-10 hover:bg-[#f28c28] hover:scale-105 transition-all duration-200 h-max w-max p-2  rounded-sm text-[#ffffff]'>Contact</button>
           </Link>
         </div>
       </div>

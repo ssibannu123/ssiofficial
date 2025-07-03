@@ -7,7 +7,7 @@ gsap.registerPlugin(scrollTrigger)
 
 const GsapContextProvider = ({ children }) => {
 
-    let durationVariable = 0.4;
+    let durationVariable = 0.5;
 
 
 
@@ -20,6 +20,9 @@ const GsapContextProvider = ({ children }) => {
     let aboutheadingRef = useRef()
     let aboutImgRef = useRef()
     let aboutContentRef = useRef()
+
+    let projectsHeadingRef=useRef()
+    let ProjectCardParentElementRef=useRef()
 
     let servicesHeadingRef = useRef()
     let servicesCardParentElementRef = useRef()
@@ -97,7 +100,7 @@ const GsapContextProvider = ({ children }) => {
             let gsapTimeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: aboutheadingRef.current,
-                    start: "top 50%"
+                    start: "top 60%"
                 }
             })
 
@@ -137,12 +140,54 @@ const GsapContextProvider = ({ children }) => {
 
 
 
+
+
+    // services section animation
+    useEffect(() => {
+        let gsapTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: projectsHeadingRef.current,
+                start: "top 80%"
+            }
+        })
+
+        gsapTimeline.to(projectsHeadingRef.current,
+            {
+                opacity: 1,
+                duration: durationVariable,
+            }
+        )
+
+
+        gsapTimeline.to(ProjectCardParentElementRef?.current?.children,
+            {
+                opacity: 1,
+                y: -40,
+                duration: durationVariable-0.4,
+                stagger: 0.1,
+                ease: "power2.out"
+            }
+        )
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
     // services section animation
     useEffect(() => {
         let gsapTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: servicesHeadingRef.current,
-                start: "top 50%"
+                start: "top 80%"
             }
         })
 
@@ -179,7 +224,7 @@ const GsapContextProvider = ({ children }) => {
         let gsapTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: membersheadingRef.current,
-                start: "top 50%"
+                start: "top 70%"
             }
         })
 
@@ -213,7 +258,7 @@ const GsapContextProvider = ({ children }) => {
         let gsapTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: contactHeadingRef.current,
-                start: "top 50%"
+                start: "top 70%"
             }
         })
 
@@ -258,6 +303,9 @@ const GsapContextProvider = ({ children }) => {
             aboutheadingRef,
             aboutImgRef,
             aboutContentRef,
+
+            projectsHeadingRef, 
+            ProjectCardParentElementRef,
 
             servicesHeadingRef,
             servicesCardParentElementRef,

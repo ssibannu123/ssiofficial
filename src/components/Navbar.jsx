@@ -1,12 +1,11 @@
 'use client';
 import Link from 'next/link';
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import logo from '../../public/logo.png'
 import Image from 'next/image';
 import { GsapContext } from '@/context/GsapContext';
 import 'remixicon/fonts/remixicon.css'
 import gsap from 'gsap';
-
+import { logo } from '@/utilities/filesAndLink';
 
 
 
@@ -146,12 +145,12 @@ const Navbar = () => {
 
 
                 {/* logo */}
-                <div ref={logoRef} className=" h-20 md:h-28 w-32 mt-1 md:mt-0 md:w-40 flex items-center -translate-x-56">
+                <div ref={logoRef} className=" h-20 md:h-28 w-32 mt-2  md:mt-0 md:w-40 flex items-center -translate-x-56">
                     <Image
                         src={logo}
                         alt='logo of ssib'
-                        height={200}
-                        width={200}
+                        height={120}
+                        width={120}
                         className='object-cover'
                     />
                 </div>
@@ -165,7 +164,7 @@ const Navbar = () => {
                             <div
                                 ref={navRef}
                                 onClick={handleMenuIconClick}
-                                className="h-max w-max text-2xl font-semibold mr-5 text-zinc-950 dark:text-zinc-200 cursor-pointer ">
+                                className="h-max w-max text-3xl font-semibold mr-5 opacity-0 cursor-pointer ">
                                 <i className="ri-menu-line"></i>
                             </div>
                             :

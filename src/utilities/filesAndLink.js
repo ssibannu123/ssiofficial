@@ -1,7 +1,11 @@
 
 
+// const heroSectionBgImg= "https://media.istockphoto.com/id/1734420358/photo/two-designers-choosing-colour-looking-monitor-business-place-men-brainstorming.jpg?s=1024x1024&w=is&k=20&c=loCZnUzxt2_qS9FjJbrtRmMehm3lxTXhsFcnZ0o-JDs="
+import aboutSectionSideImg  from '../../public/bgImg1.png'
+import heroSectionBgImg  from '../../public/bgImg2.jpeg'
 
 
+import logo from '../../public/si.png'
 import munibSirImg from '../../public/munibSir.jpeg'
 import asadSirImg from '../../public/asadSir.jpeg'
 import wahabSirImg from '../../public/wahabSir.jpeg'
@@ -26,12 +30,31 @@ const whatAppNo="+923213268095"
 const phoneNo="+923213268095"
 
 
-// const heroSectionBgImg= "https://media.istockphoto.com/id/1734420358/photo/two-designers-choosing-colour-looking-monitor-business-place-men-brainstorming.jpg?s=1024x1024&w=is&k=20&c=loCZnUzxt2_qS9FjJbrtRmMehm3lxTXhsFcnZ0o-JDs="
-import heroSectionBgImg from '../../public/bgImg2.jpeg'
-import aboutSectionSideImg from '../../public/bgImg1.png'
+import tumbnail1 from '@/../public/tumbnail1.jpg'
+import tumbnail2 from '@/../public/tumbnail2.png'
+import tumbnail3 from '@/../public/tumbnail3.png'
+import tumbnail4 from '@/../public/tumbnail4.jpg'
+import uiux1 from '@/../public/uiux1.png'
+import uiux2 from '@/../public/uiux2.png'
+import uiux3 from '@/../public/uiux3.png'
+import uiux4 from '@/../public/uiux4.png'
+import web1 from '@/../public/web1.png'
+import web2 from '@/../public/web2.png'
+import web3 from '@/../public/web3.png'
+import web4 from '@/../public/web4.png'
+
+
+
+
+
+
+
+
+
 
 
 export {
+    logo,
     munibSirImg,
     asadSirImg,
     wahabSirImg,
@@ -54,5 +77,20 @@ export {
     web,
     modeling,
     computer,
-    videoEditing
+    videoEditing,
+
+
+
+    tumbnail1,
+    tumbnail2,
+    tumbnail3,
+    tumbnail4,
+    uiux1,
+    uiux2,
+    uiux3,
+    uiux4,
+    web1,
+    web2,
+    web3,
+    web4
 }

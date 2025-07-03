@@ -4,12 +4,12 @@ import { facebookUrl, instagramUrl, tiktokUrl, youtubeUrl } from '@/utilities/fi
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10 px-4 sm:px-8 lg:px-16">
+    <footer className="bg-[#0c4b70] text-[#ffffff] py-10 px-4 sm:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo & Description */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-3">Syed Software Institute</h2>
-          <p className="text-sm text-gray-400">
+          <h2 className="text-2xl font-bold text-[#F28C28] mb-3">Syed Software Institute</h2>
+          <p className="text-sm text-[#E0E0E0]">
             Building the future of web experiences. High-quality solutions for modern businesses.
           </p>
         </div>
@@ -41,7 +41,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-500 flex flex-wrap justify-center">
         © {new Date().getFullYear()} YourCompany. All rights reserved.
-        <a href='https://ik-portfolio-org.vercel.app' target='_blank' className='ml-2'>developer@<span className='text-blue-700'>ibrahim</span></a>
+        <a href='https://ik-portfolio-org.vercel.app' target='_blank' className='ml-2'>developer@<span className='text-[#f28c28]'>ibrahim</span></a>
       </div>
     </footer>
   );
