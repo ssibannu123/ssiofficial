@@ -10,8 +10,7 @@ const Footer = () => {
         <div>
           <h2 className="text-2xl font-bold text-[#F28C28] mb-3">Syed Software Institute</h2>
           <p className="text-sm text-[#E0E0E0]">
-            Building the future of web experiences. High-quality solutions for modern businesses.
-          </p>
+Syed Software Institute offers affordable, practical training in Graphic Design, Web Development, 3D Modeling, and Freelancing. It's the region’s first software house and IT academy. </p>
         </div>
 
         {/* Quick Links */}

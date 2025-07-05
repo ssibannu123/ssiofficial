@@ -100,7 +100,7 @@ const GsapContextProvider = ({ children }) => {
             let gsapTimeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: aboutheadingRef.current,
-                    start: "top 60%"
+                    start: "top 80%"
                 }
             })
 

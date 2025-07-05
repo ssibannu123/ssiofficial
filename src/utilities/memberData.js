@@ -8,17 +8,25 @@ const { munibSirImg, azamSirImg, wahabSirImg, asadSirImg, ibrahimImg } = require
         {
             imgUrl: munibSirImg,
             name: "Syed Munib (Ceo)",
-            desc: "We privide the best ever web dev course in syed software house."
+            desc: "BSCS graduate skilled in 3D design, graphics, freelancing, game development, social media."
         },
+        {
+            imgUrl:"https://res.cloudinary.com/dzo12ba3f/image/upload/v1751693319/IMG_5099_tq2hna.jpg", 
+            name:"Ahmad Hamid (Co_founder)",
+            desc:"BSCS graduate currently working in a Dubai-based tech company with professional expertise."
+
+        },
+
+        
         {
             imgUrl: azamSirImg,
             name: "Azam Sir",
-            desc: "We privide the best ever web dev course in syed software house."
+            desc: "BSCS graduate skilled in graphic design, web development, and creative digital solutions."
         },
         {
             imgUrl: wahabSirImg,
             name: "Wahab Sir",
-            desc: "We privide the best ever web dev course in syed software house."
+            desc: "BS graduate, civil engineer, AutoCAD and computer expert with technical project experience."
         },
         {
             imgUrl: asadSirImg,

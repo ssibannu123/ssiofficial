@@ -212,7 +212,12 @@ const Navbar = () => {
                 smallScreenNavDisplay ?
                     <div
                         ref={smallScreenSideNavbarRef}
-                        className={`h-[100vh]  w-1/2   fixed top-0 right-0 translate-x-0 backdrop-blur-2xl  transition-all duration-1000`}>
+                        className={`h-[100vh]  w-1/2   fixed top-0 right-0 translate-x-0   transition-all duration-1000`}
+                        style={{
+                            backdropFilter: 'blur(20px)',
+                            WebkitBackdropFilter: 'blur(20px)', // for Safari
+                            backgroundColor: 'rgba(255, 255, 255, 0.3)', // semi-transparent
+                        }}>
                         <div className="h-full w-full relative pt-20 flex flex-col text-center ml-auto px-10   text-zinc-800">
                             {
                                 navArray.map((eachNav, index) => {

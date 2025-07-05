@@ -30,7 +30,7 @@ import { autodesk, computer, cpp, gameDev, graphicDesigning, modeling, msOffice,
             name: "3D Modeling ",
             desc: "Master the art of 3D modeling, rendering, and animation for games, videos, and more.",
             duration: 3,
-            price: 12000
+            price: 15000
         },
         {
             imgUrl: autodesk,

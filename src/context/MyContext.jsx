@@ -9,10 +9,19 @@ const MyContextProvider = ({ children }) => {
 
     const [currentClickedCourseDetails, setCurrentClickedCourseDetails] = useState(null)
 
+    const [currentProjectCatagSectionIndex, setCurrentProjectCatagSectionIndex]= useState(0)
+
+
+
+
+
+
     return (
         <MyContext.Provider value={{
-            currentClickedCourseDetails, setCurrentClickedCourseDetails
+            currentClickedCourseDetails, setCurrentClickedCourseDetails,
+            currentProjectCatagSectionIndex, setCurrentProjectCatagSectionIndex
         }} >
+
             { children }
         </MyContext.Provider >
     )

@@ -6,6 +6,8 @@ import 'remixicon/fonts/remixicon.css'
 import { tumbnail1 } from '@/utilities/filesAndLink';
 import "./Project.css"
 import projectData from '@/utilities/projectsData';
+import { MyContext } from '@/context/MyContext';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -20,9 +22,14 @@ const Projects = () => {
 
     let {
         projectsHeadingRef,
-        ProjectCardParentElementRef
+        ProjectCardParentElementRef,
     } = useContext(GsapContext)
 
+    let {
+        setCurrentProjectCatagSectionIndex
+    } = useContext(MyContext)
+
+    let router = useRouter()
     let [tumbnailSectionView, setTumbnailSectionView] = useState(false)
     let [uiUxSectionView, setUiUxSectionView] = useState(false)
     let [webSectionView, setWebSectionView] = useState(false)
@@ -150,7 +157,6 @@ const Projects = () => {
 
                         projectData.map((eachSection, index) => {
 
-                            let [focus, setFocus] = useState(false)
 
 
                             return (
@@ -158,24 +164,31 @@ const Projects = () => {
 
                                 <div
                                     key={index}
-                                    onClick={() => { handleSectionBoxClick(eachSection.name); setFocus(prev => !prev) }}
-                                    className={`projectBox       h-max w-96 opacity-0    gap-x-2 gap-y-2 flex  justify-center items-center  p-2 transform origin-center transition-transform duration-1000 border-2 border-zinc-200 rounded-lg ${focus ? " animation     backdrop-blur-2xl backdrop-brightness-50 flex-col md:flex-row" : "flex-row "} `}>
+                                    onClick={() => { setCurrentProjectCatagSectionIndex(index); router.push("projectPage") }}
+                                    className={`projectBox       h-max w-80 opacity-0    gap-x-2 gap-y-2 flex  justify-center items-center  p-2 transform origin-center transition-transform duration-1000 border-2 border-zinc-200 rounded-lg `}>
 
-                                    
+
 
                                     {/* map on child arrays inside parent array looping */}
                                     {
                                         eachSection.data.map((eachProject, indexChild) => {
+
+                                            // to make sure that on screen of home, more that 4 not rendered and there is not limitation on projectPage projects
+                                            if (indexChild >= 4) {
+                                                console.log(indexChild)
+                                                return;
+                                            }
+
                                             return (
                                                 <div
                                                     key={indexChild}
-                                                    className={`h-max   overflow-hidden mt-0 rounded-lg flex justify-center items-center ${focus ? " w-[80%] md:w-[47%]" : " w-[47%]"}`}>
+                                                    className={` w-[48%]  overflow-hidden mt-0 rounded-lg flex justify-center items-center `}>
                                                     <Image
                                                         src={eachProject}
-                                                        height={400}
-                                                        width={400}
+                                                        height={100}
+                                                        width={150}
                                                         alt='tumnail img '
-                                                        className='object-cover rounded-lg border-2 border-zinc-300'
+                                                        className=' object-cover rounded-lg border-2 border-zinc-300'
                                                     />
                                                 </div>
                                             )
@@ -184,7 +197,7 @@ const Projects = () => {
 
 
 
-
+<h1>{eachSection.name=="web"?"Websites":eachSection.name=="uiux"?"UI/UX":eachSection.name=="tumbnail"?"TUMBNAIL":null}</h1>
 
 
 

@@ -122,7 +122,7 @@ const Services = () => {
                                     <div className='w-full flex justify-center flex-col items-center'>
                                         <h2 className='w-full text-sm md:text-xl font-bold mt-2   px-2 '>{eachService.name}</h2>
                                         <p className='w-full text-[10px] md:text-sm leading-4 text-zinc-500  mt-2 px-2 '>{eachService.desc}</p>
-                                        {/* <p className='w-full text-sm leading-3.5 text-zinc-500  mt-2 px-2'>{eachService.price} ruppees</p> */}
+                                        <p className='w-full text-[10px] md:text-sm leading-3.5 text-zinc-500  mt-2 px-2'>Fee: {eachService.price} ruppees</p>
                                         <p className='w-full text-[10px] md:text-sm leading-3.5 text-zinc-500  mt-2 px-2'>{eachService.duration} months</p>
                                         <button onClick={() => { handleApplyBtnClick(eachService) }} className='bg-[#10649c] hover:bg-[#008cbf] h-8 w-[95%] rounded-sm text-zinc-100 mx-full mt-5 cursor-pointer text-[10px] md:text-sm'>Apply</button>
 
