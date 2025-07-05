@@ -145,16 +145,18 @@ const Navbar = () => {
 
 
                 {/* logo */}
-                <div ref={logoRef} className=" h-20 md:h-28 w-32 mt-2  md:mt-0 md:w-40 flex items-center -translate-x-56">
-                    <Image
-                        src={logo}
-                        alt='logo of ssib'
-                        height={120}
-                        width={120}
-                        className='object-cover'
-                    />
-                </div>
+                <Link href="#home">
+                    <div ref={logoRef} className=" h-20 md:h-28 w-32 mt-2  md:mt-0 md:w-40 flex items-center -translate-x-56">
+                        <Image
+                            src={logo}
+                            alt='logo of ssib'
+                            height={120}
+                            width={120}
+                            className='object-cover'
+                        />
+                    </div>
 
+                </Link>
 
                 <div className="h-full w-max flex  justify-center items-center ">
                     {
